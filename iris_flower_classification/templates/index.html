@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flower Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Flower Prediction</h1>
+        <form method="POST" action="/predict">
+            <div class="form-group">
+                <label for="sepal_length">Sepal Length:</label>
+                <input type="text" id="sepal_length" name="sepal_length" value="{{ form_values['sepal_length'] }}">
+            </div>
+            <div class="form-group">
+                <label for="sepal_width">Sepal Width:</label>
+                <input type="text" id="sepal_width" name="sepal_width" value="{{ form_values['sepal_width'] }}">
+            </div>
+            <div class="form-group">
+                <label for="petal_length">Petal Length:</label>
+                <input type="text" id="petal_length" name="petal_length" value="{{ form_values['petal_length'] }}">
+            </div>
+            <div class="form-group">
+                <label for="petal_width">Petal Width:</label>
+                <input type="text" id="petal_width" name="petal_width" value="{{ form_values['petal_width'] }}">
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Predict">
+            </div>
+        </form>
+        <br>
+        {% if result %}
+        <h2>Prediction: {{ result }}</h2>
+        {% endif %}
+    </div>
+</body>
+</html>
