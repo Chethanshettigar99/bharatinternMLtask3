@@ -1,7 +1,7 @@
 # Iris flower Classification
 This Flask application hosts a web interface for predicting the class of an iris flower based on its sepal and petal measurements. The app uses a pre-trained machine learning model saved in a pickle file to make predictions.
 
-Key points of this code include:
+Key points :
 
 Model Loading: The model is loaded from a file named saved_model.sav using Python's pickle module.
 
